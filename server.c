@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <netinet/in.h>
 #include <string.h>
-#define PORT 20498
+#define PORT 30498
 #define RSIZE 8192
 #define BSIZE 4096
 
@@ -42,10 +42,13 @@ int main() {
     exit(1);
   }
 
-  if (listen(soc, 10) < 0) {
+  if (listen(soc, 15) < 0) {
     perror("listen");
     exit(1);
   }
+
+  printf("server running on port %d", PORT);
+  fflush(stdout);
 
   while(1) {
     if ((soc_in = accept(soc, (struct sockaddr *)&client, &client_size)) < 0 ) {
