@@ -1,6 +1,4 @@
 Ali Bokhari
-0970498
-CIS3210 A2
 
 compile with 'make all'
 run server with './server'
